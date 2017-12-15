@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="175.0" prefWidth="252.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="Attacker Name: " />
+            <TextField fx:id="attackerNameField" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" spacing="5.0">
+         <children>
+            <Label text="Target: " />
+            <ComboBox fx:id="targetList" prefWidth="150.0" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label text="Travel Time:" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="tDays" maxWidth="40.0" promptText="DD" />
+                  <TextField fx:id="tHours" maxWidth="40.0" promptText="hh" />
+                  <TextField fx:id="tMins" maxWidth="40.0" promptText="mm" />
+                  <TextField fx:id="tSecs" maxWidth="40.0" promptText="ss" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" top="5.0" />
+         </padding>
+      </VBox>
+      <HBox alignment="CENTER_LEFT" spacing="5.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#addAttacker" text="Add Attacker" />
+            <Label fx:id="alertLabel" textFill="RED" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>
