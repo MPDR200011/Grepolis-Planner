@@ -9,73 +9,88 @@ import mpdr.calculator.controller.MainController;
 
 public class MainMenu {
 
-    private static MenuBar menuBar;
+	private static MenuBar menuBar;
 
-    private static Menu planMenu;
-    private static Menu choosePlan;
-    private static MenuItem createPlan;
-    private static MenuItem editPlan;
-    private static MenuItem deletePlan;
+	private static Menu planMenu;
+	private static Menu choosePlan;
+	private static MenuItem createPlan;
+	private static MenuItem editPlan;
+	private static MenuItem deletePlan;
 
-    public static void loadMenu(MenuBar menu) {
-	menuBar = menu;
+	private static Menu toolsMenu;
+	private static MenuItem exportPlan;
 
-	planMenu = new Menu("Plan");
-	loadPlanList();
-	createPlan = new MenuItem("Create Plan");
-	createPlan.setOnAction(e -> {
-	    try {
-		createPlan();
-	    } catch (Exception e1) {
-		e1.printStackTrace();
-	    }
-	});
-	editPlan = new MenuItem("Edit Plan");
-	editPlan.setOnAction(e -> {
-	    try {
-		editPlan();
-	    } catch (Exception e1) {
-		e1.printStackTrace();
-	    }
-	});
-	deletePlan = new MenuItem("Delete Plan");
-	deletePlan.setOnAction(e -> deletePlan());
+	public static void loadMenu(MenuBar menu) {
+		menuBar = menu;
 
-	planMenu.getItems().addAll(new SeparatorMenuItem(), createPlan, editPlan, deletePlan);
+		// Plan Menu
+		planMenu = new Menu("Plan");
+		loadPlanList();
+		createPlan = new MenuItem("Create Plan");
+		createPlan.setOnAction(e -> {
+			try {
+				createPlan();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		});
+		editPlan = new MenuItem("Edit Plan");
+		editPlan.setOnAction(e -> {
+			try {
+				editPlan();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		});
+		deletePlan = new MenuItem("Delete Plan");
+		deletePlan.setOnAction(e -> deletePlan());
 
-	menuBar.getMenus().addAll(planMenu);
-    }
+		planMenu.getItems().addAll(new SeparatorMenuItem(), createPlan, editPlan, deletePlan);
 
-    private static void loadPlanList() {
-	ObservableList<String> list = MainController.getPlanNameList();
-	choosePlan = null;
-	choosePlan = new Menu("Choose Plan");
-	if (list.size() > 0) {
-	    for (String name : list) {
-		MenuItem item = new MenuItem(name);
-		item.setOnAction(e -> MainController.selectPlan(name));
-		choosePlan.getItems().add(item);
-	    }
+		// Tools Menu
+		toolsMenu = new Menu("Tools");
+		exportPlan = new MenuItem("Export plan to Excel File");
+		exportPlan.setOnAction(e -> export());
+
+		toolsMenu.getItems().addAll(exportPlan);
+
+		menuBar.getMenus().addAll(planMenu, toolsMenu);
 	}
-	if (planMenu.getItems().size() > 0) {
-	    planMenu.getItems().remove(0);
+
+	private static void loadPlanList() {
+		ObservableList<String> list = MainController.getPlanNameList();
+		choosePlan = null;
+		choosePlan = new Menu("Choose Plan");
+		if (list.size() > 0) {
+			for (String name : list) {
+				MenuItem item = new MenuItem(name);
+				item.setOnAction(e -> MainController.selectPlan(name));
+				choosePlan.getItems().add(item);
+			}
+		}
+		if (planMenu.getItems().size() > 0) {
+			planMenu.getItems().remove(0);
+		}
+		planMenu.getItems().add(0, choosePlan);
 	}
-	planMenu.getItems().add(0, choosePlan);
-    }
 
-    private static void createPlan() throws Exception {
-	MainController.createPlan();
-    }
+	private static void createPlan() throws Exception {
+		MainController.createPlan();
+	}
 
-    private static void deletePlan() {
-	MainController.deleteSelectedPlan();
-    }
+	private static void deletePlan() {
+		MainController.deleteSelectedPlan();
+	}
 
-    private static void editPlan() throws Exception {
-	MainController.editPlan();
-    }
+	private static void editPlan() throws Exception {
+		MainController.editPlan();
+	}
 
-    public static void reloadMenu() {
-	loadPlanList();
-    }
+	public static void reloadMenu() {
+		loadPlanList();
+	}
+
+	public static void export() {
+		MainController.exportToExcel();
+	}
 }
