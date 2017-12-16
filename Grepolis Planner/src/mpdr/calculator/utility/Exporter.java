@@ -53,7 +53,7 @@ public class Exporter {
 		}
 
 		try {
-			File save = new File(System.getProperty("user.dir"), plan.getName() + ".xls");
+			File save = new File(System.getProperty("user.dir"), plan.getName() + ".xlsx");
 			FileOutputStream out = new FileOutputStream(save);
 			workbook.write(out);
 			out.close();
