@@ -11,43 +11,43 @@ import mpdr.calculator.window.main.table.TableController;
 
 public class MainWindowController {
 
-    public MenuBar menu;
+	public MenuBar menu;
 
-    public TableView<AttackingCity> table;
+	public TableView<AttackingCity> table;
 
-    public Label planName;
-    public String name;
+	public Label planName;
+	public String name;
 
-    public Button addAttackerButton;
+	public Button addAttackerButton;
 
-    public void initialize() {
-	MainController.setMainWindowController(this);
+	public void initialize() {
+		MainController.setMainWindowController(this);
 
-	MainMenu.loadMenu(menu);
+		MainMenu.loadMenu(menu);
 
-	planName.setText("Plan: " + MainController.getSelectedPlan().getName());
+		planName.setText("Plan: " + MainController.getSelectedPlan().getName());
 
-	TableController.loadTable(table);
-    }
-
-    public void putName(String planName) {
-	name = planName;
-    }
-
-    public void setPlanName() {
-	planName.setText("Plan: " + name);
-    }
-
-    public void addAttackerAction() throws Exception {
-	MainController.addAttacker();
-    }
-
-    public void removeAttackerAction() {
-	AttackingCity city = table.getSelectionModel().getSelectedItem();
-
-	if (city != null) {
-	    MainController.deleteAttacker(city);
+		TableController.loadTable(table);
 	}
-    }
+
+	public void putName(String planName) {
+		name = planName;
+	}
+
+	public void setPlanName() {
+		planName.setText("Plan: " + name);
+	}
+
+	public void addAttackerAction() throws Exception {
+		MainController.addAttacker();
+	}
+
+	public void removeAttackerAction() {
+		AttackingCity city = table.getSelectionModel().getSelectedItem();
+
+		if (city != null) {
+			MainController.deleteAttacker(city);
+		}
+	}
 
 }

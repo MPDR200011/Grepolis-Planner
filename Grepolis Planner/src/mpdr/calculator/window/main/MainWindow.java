@@ -9,25 +9,25 @@ import mpdr.calculator.controller.Handler;
 
 public class MainWindow extends Application {
 
-    public static void initialize(String[] args) {
-	launch(args);
-    }
+	public static void initialize(String[] args) {
+		launch(args);
+	}
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-	primaryStage.setTitle("Calculator");
-	primaryStage.setResizable(false);
-	primaryStage.setOnCloseRequest(e -> {
-	    e.consume();
-	    Handler.save();
-	    primaryStage.close();
-	});
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		primaryStage.setTitle("Calculator");
+		primaryStage.setResizable(false);
+		primaryStage.setOnCloseRequest(e -> {
+			e.consume();
+			Handler.save();
+			primaryStage.close();
+		});
 
-	FXMLLoader loader = new FXMLLoader(getClass().getResource("Sample.fxml"));
-	Parent root = loader.load();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Sample.fxml"));
+		Parent root = loader.load();
 
-	Scene mainScene = new Scene(root, 500, 500);
-	primaryStage.setScene(mainScene);
-	primaryStage.show();
-    }
+		Scene mainScene = new Scene(root, 500, 500);
+		primaryStage.setScene(mainScene);
+		primaryStage.show();
+	}
 }
