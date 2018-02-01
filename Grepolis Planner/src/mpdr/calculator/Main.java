@@ -1,6 +1,6 @@
 package mpdr.calculator;
 
-import mpdr.calculator.controller.Handler;
+import mpdr.calculator.control.Handler;
 import mpdr.calculator.window.main.MainWindow;
 
 public class Main {

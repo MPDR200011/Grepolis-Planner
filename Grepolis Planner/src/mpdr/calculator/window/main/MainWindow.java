@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import mpdr.calculator.controller.Handler;
+import mpdr.calculator.control.Handler;
 
 public class MainWindow extends Application {
 

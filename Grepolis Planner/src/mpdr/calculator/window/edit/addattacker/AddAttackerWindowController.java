@@ -6,7 +6,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import mpdr.calculator.controller.MainController;
+import mpdr.calculator.control.MainController;
 import mpdr.calculator.window.main.table.Plan;
 
 public class AddAttackerWindowController {

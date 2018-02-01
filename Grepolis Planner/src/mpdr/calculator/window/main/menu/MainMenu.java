@@ -5,7 +5,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
-import mpdr.calculator.controller.MainController;
+import mpdr.calculator.control.MainController;
 
 public class MainMenu {
 
@@ -19,6 +19,7 @@ public class MainMenu {
 
 	private static Menu toolsMenu;
 	private static MenuItem exportPlan;
+	private static MenuItem quickCalculator;
 
 	public static void loadMenu(MenuBar menu) {
 		menuBar = menu;
@@ -51,6 +52,7 @@ public class MainMenu {
 		toolsMenu = new Menu("Tools");
 		exportPlan = new MenuItem("Export plan to Excel File");
 		exportPlan.setOnAction(e -> export());
+		quickCalculator = new Menu("Quick Calculator");
 
 		toolsMenu.getItems().addAll(exportPlan);
 
@@ -92,5 +94,9 @@ public class MainMenu {
 
 	public static void export() {
 		MainController.exportToExcel();
+	}
+
+	public static void quickCalculator() {
+
 	}
 }

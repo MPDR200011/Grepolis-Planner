@@ -1,4 +1,4 @@
-package mpdr.calculator.controller;
+package mpdr.calculator.control;
 
 import java.util.ArrayList;
 import java.util.HashMap;

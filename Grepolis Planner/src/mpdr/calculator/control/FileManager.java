@@ -1,4 +1,4 @@
-package mpdr.calculator.controller;
+package mpdr.calculator.control;
 
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;

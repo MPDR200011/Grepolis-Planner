@@ -1,4 +1,4 @@
-package mpdr.calculator.controller;
+package mpdr.calculator.control;
 
 import mpdr.calculator.window.main.table.Plan;
 

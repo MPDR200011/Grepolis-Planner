@@ -4,7 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.TableView;
-import mpdr.calculator.controller.MainController;
+import mpdr.calculator.control.MainController;
 import mpdr.calculator.window.main.menu.MainMenu;
 import mpdr.calculator.window.main.table.AttackingCity;
 import mpdr.calculator.window.main.table.TableController;
