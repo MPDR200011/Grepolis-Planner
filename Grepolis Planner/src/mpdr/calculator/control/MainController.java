@@ -17,6 +17,7 @@ import mpdr.calculator.window.main.table.AttackingCity;
 import mpdr.calculator.window.main.table.Plan;
 import mpdr.calculator.window.main.table.TableController;
 import mpdr.calculator.window.newplan.NewPlanWindow;
+import mpdr.calculator.window.tools.calculator.QuickCalculatorWindow;
 
 public class MainController {
 
@@ -137,6 +138,15 @@ public class MainController {
 				AddAttackerWindowController controller = new AddAttackerWindowController(selectedPlan);
 				window.display(controller);
 			}
+		}
+	}
+
+	public static void openQuickCalculator() {
+		QuickCalculatorWindow window = new QuickCalculatorWindow();
+		try {
+			window.dispaly();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 

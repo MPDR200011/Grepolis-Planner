@@ -52,9 +52,10 @@ public class MainMenu {
 		toolsMenu = new Menu("Tools");
 		exportPlan = new MenuItem("Export plan to Excel File");
 		exportPlan.setOnAction(e -> export());
-		quickCalculator = new Menu("Quick Calculator");
+		quickCalculator = new MenuItem("Quick Date Calculator");
+		quickCalculator.setOnAction(e -> openQuickCalculator());
 
-		toolsMenu.getItems().addAll(exportPlan);
+		toolsMenu.getItems().addAll(exportPlan, quickCalculator);
 
 		menuBar.getMenus().addAll(planMenu, toolsMenu);
 	}
@@ -96,7 +97,7 @@ public class MainMenu {
 		MainController.exportToExcel();
 	}
 
-	public static void quickCalculator() {
-
+	public static void openQuickCalculator() {
+		MainController.openQuickCalculator();
 	}
 }
