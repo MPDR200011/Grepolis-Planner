@@ -1,3 +1,3 @@
 # Grepolis-Planer
 
-The official repository for the grpolis attack planner.
+The official repository for the grepolis attack planner.
