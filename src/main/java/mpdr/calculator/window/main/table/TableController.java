@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+
 import mpdr.calculator.control.MainController;
 
 public class TableController {
